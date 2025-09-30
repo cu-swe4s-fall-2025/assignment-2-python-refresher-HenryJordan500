@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 def get_column(file_name, query_column, query_value, result_column):
@@ -17,6 +18,23 @@ def get_column(file_name, query_column, query_value, result_column):
 
     # Convert dataframe datatype to integer than convert dataframe to list
     return results.astype(int).to_list()
+
+def mean(array):
+
+
+    return np.mean(array)
+
+def median(array):
+
+
+    return np.median(array)
+
+
+def std(array):
+
+
+    return np.std(array)
+
 
 def main():  # Define main function
 
