@@ -7,19 +7,20 @@ parser = argparse.ArgumentParser(description='Input ',  # Initialize argument pa
 parser.add_argument('--country',    # Add arguments
                     type=str,
                     help='Input the country you wish to study',
-                    required=True,
+                    required=False,
                     default='United States of America')
 
 parser.add_argument('--country_column',
-                    type=str,
-                    help='Select column to query by name',
-                    required=True,
-                    default='Area')
+                    type=int,
+                    help='Select column to query by number starting from index 0',
+                    required=False,
+                    default=0)
 
 parser.add_argument('--fires_column',
-                    type=str,
-                    help='Select column by name to get data from',
-                    default='Forest fires')
+                    type=int,
+                    help='Select column to get data from by index starting at 0',
+                    required=False,
+                    default=3)
 
 parser.add_argument('--file_name',
                     type=str,
