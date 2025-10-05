@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-def get_column(file_name, query_column, query_value, result_column=1):
+def get_column(file_name, query_column, query_value, result_column=0):
 
 
     df = pd.read_csv(file_name)  # Initialize csv as dataframe
@@ -22,14 +22,18 @@ def get_column(file_name, query_column, query_value, result_column=1):
 
 def mean(array):
 
-
-    return np.mean(array)
+    return sum(array)/len(array)
 
 def median(array):
 
+    mid_len = len(array)/2
+    print(mid_len)
+    if mid_len
 
-    return np.median(array)
+    #return np.median(array)
 
+arr = np.random.randint(100,size=11)
+print(median(arr))
 
 def std(array):
 
