@@ -3,8 +3,8 @@
 
 ## Get Column Function
 
-get_column takes the data from a csv and extracts the data from the results column from just the values queried in the queried column. Accepts csv file and manipulates it as a data frame so use the column keys for querying. 
+get_column takes the data from a csv and extracts the data from the results column from just the values queried in the queried column. Accepts csv file, manipulates it as a numpy array, and outputs a list of integers 
 
 ## Print Fires
 
-print_fires.py prints the forest fires in the US for each year in the dataset. Excutes from run.sh file.
+print_fires.py prints the forest fires in the input country for each year in the dataset. Executes from run.sh file. Arguments are --country --country_column --fires_column --file_name.
