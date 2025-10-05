@@ -17,7 +17,7 @@ def get_column(file_name, query_column, query_value, result_column=1):
     # Remove 0 elements from results array
     results = results[results != 0]
 
-    # Convert dataframe datatype to integer than convert dataframe to list
+    # Convert array datatype to integer than convert array to list
     return results.astype(int).tolist()
 
 def mean(array):
