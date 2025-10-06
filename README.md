@@ -7,4 +7,7 @@ get_column takes the data from a csv and extracts the data from the results colu
 
 ## Print Fires
 
-print_fires.py prints the forest fires in the input country for each year in the dataset. Executes from run.sh file. Arguments are --country --country_column --fires_column --file_name.
+print_fires.py prints the forest fires in the input country for each year in the dataset. Executes from run.sh file. Arguments are --country --country_column --fires_column --file_name --operation. --operation takes "mean", "median", or "std".
+
+# Testing
+Unit tests validate mean, median, and standard deviaition functions. Functional testing on shortetend data set of full program. 
