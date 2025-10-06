@@ -31,7 +31,8 @@ parser.add_argument('--file_name',
 parser.add_argument('--operation',
                     type=str,
                     help='Specifiy to compute mean, median or std of retrived data',
-                    required=False)
+                    required=False,
+                    default=None)
 
 args = parser.parse_args()
 
@@ -40,11 +41,11 @@ fires = get_column(file_name=args.file_name,    # Execute function to extract da
                    query_value=args.country,
                    result_column=args.fires_column)
 
-print(fires)
-
 if args.operation == 'median':
     print(f'Median is {median(fires)}')
 elif args.operation == 'mean':
-    print(f' Mean is {mean(fires)}')
+    print(f'Mean is {mean(fires)}')
 elif args.operation == 'std':
-    print(f'Standard deviaiton is {std(fires)}')
+    print(f'Standard deviation is {std(fires)}')
+else:
+    print(fires)
