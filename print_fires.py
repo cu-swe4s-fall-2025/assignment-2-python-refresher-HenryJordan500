@@ -28,6 +28,11 @@ parser.add_argument('--file_name',
                     required=False,
                     default='Agrofood_co2_emission.csv')
 
+parser.add_argument('--operation',
+                    type=str,
+                    help='Specifiy to compute mean, median or std of retrived data',
+                    required=False)
+
 args = parser.parse_args()
 
 fires = get_column(file_name=args.file_name,    # Execute function to extract data
@@ -36,3 +41,10 @@ fires = get_column(file_name=args.file_name,    # Execute function to extract da
                    result_column=args.fires_column)
 
 print(fires)
+
+if args.operation == 'median':
+    print(f'Median is {median(fires)}')
+elif args.operation == 'mean':
+    print(f' Mean is {mean(fires)}')
+elif args.operation == 'std':
+    print(f'Standard deviaiton is {std(fires)}')
