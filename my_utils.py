@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-def get_column(file_name, query_column, query_value, result_column=1):
+def get_column(file_name, query_column, query_value, result_column=0):
 
 
     df = pd.read_csv(file_name)  # Initialize csv as dataframe
@@ -22,19 +22,47 @@ def get_column(file_name, query_column, query_value, result_column=1):
 
 def mean(array):
 
+    if len(array) == 0:
 
-    return np.mean(array)
+        raise ValueError('list is of zero length')
+    else:
+
+        return sum(array) / len(array)
 
 def median(array):
 
+    sorted_array = sorted(array)
+    mid_len = len(array) / 2
 
-    return np.median(array)
+    if mid_len == 0:
 
+        raise ValueError('list is of zero length')
+    
+    elif len(array) % 2 == 1:
+
+        return sorted_array[int(mid_len)]
+    
+    else:
+
+        return (sorted_array[int(mid_len - 0.5)] + sorted_array[int(mid_len + 0.5)]) / 2
 
 def std(array):
 
+    if len(array) == 0:
 
-    return np.std(array)
+        raise ValueError('list of of zero length')
+    
+    else:
+
+        std_list = []
+        std_mean = mean(array)
+
+        for i in range(len(array)):
+            std_list.append((array[i] - std_mean)**2)
+
+        std = np.sqrt(sum(std_list)/len(std_list))
+
+        return std
 
 
 def main():  # Define main function
