@@ -14,7 +14,7 @@ jobs:
         with:
           environment-file: environment.yml
           init-shell: bash
-      - run: python test/unit/test_math_lib.py
+      - run: python test/unit/test_my_utils.py
   run_func_test:
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +23,7 @@ jobs:
         with:
           environment-file: environment.yml
           init-shell: bash
-      - run: bash test/func/test_add.sh
+      - run: bash test/func/test_print_fires.sh
   run_linter:
     runs-on: ubuntu-latest
     steps:
