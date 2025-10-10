@@ -1,24 +1,31 @@
 from src.my_utils import *
 import argparse
 
-parser = argparse.ArgumentParser(description='Input ',  # Initialize argument parser
-                                 prog='Extract data on fires from a given country')
 
-parser.add_argument('--country',    # Add arguments
+# Initialize argument parser
+parser = argparse.ArgumentParser(description='Input ',
+                                 prog=('Extract data on fires from'
+                                       'a given country'))
+
+# Add arguments
+parser.add_argument('--country',
                     type=str,
-                    help='Input the country you wish to study',
+                    help=('Input the country'
+                          'you wish to study'),
                     required=False,
                     default='United States of America')
 
 parser.add_argument('--country_column',
                     type=int,
-                    help='Select column to query by number starting from index 0',
+                    help=('Select column to query by'
+                          'number starting from index 0'),
                     required=False,
                     default=0)
 
 parser.add_argument('--fires_column',
                     type=int,
-                    help='Select column to get data from by index starting at 0',
+                    help=('Select column to get data'
+                          'from by index starting at 0'),
                     required=False,
                     default=3)
 
@@ -30,13 +37,15 @@ parser.add_argument('--file_name',
 
 parser.add_argument('--operation',
                     type=str,
-                    help='Specifiy to compute mean, median or std of retrived data',
+                    help=('Specifiy to compute mean,'
+                          'median or std of retrived data'),
                     required=False,
                     default=None)
 
 args = parser.parse_args()
 
-fires = get_column(file_name=args.file_name,    # Execute function to extract data
+# Execute function to extract data file
+fires = get_column(file_name=args.file_name,
                    query_column=args.country_column,
                    query_value=args.country,
                    result_column=args.fires_column)
