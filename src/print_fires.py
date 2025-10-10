@@ -1,31 +1,31 @@
-from src.my_utils import *
+from my_utils import *
 import argparse
 
 
 # Initialize argument parser
 parser = argparse.ArgumentParser(description='Input ',
                                  prog=('Extract data on fires from'
-                                       'a given country'))
+                                       ' a given country'))
 
 # Add arguments
 parser.add_argument('--country',
                     type=str,
                     help=('Input the country'
-                          'you wish to study'),
+                          ' you wish to study'),
                     required=False,
                     default='United States of America')
 
 parser.add_argument('--country_column',
                     type=int,
                     help=('Select column to query by'
-                          'number starting from index 0'),
+                          ' number starting from index 0'),
                     required=False,
                     default=0)
 
 parser.add_argument('--fires_column',
                     type=int,
                     help=('Select column to get data'
-                          'from by index starting at 0'),
+                          ' from by index starting at 0'),
                     required=False,
                     default=3)
 
@@ -38,7 +38,7 @@ parser.add_argument('--file_name',
 parser.add_argument('--operation',
                     type=str,
                     help=('Specifiy to compute mean,'
-                          'median or std of retrived data'),
+                          ' median or std of retrived data'),
                     required=False,
                     default=None)
 
