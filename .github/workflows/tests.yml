@@ -14,7 +14,9 @@ jobs:
         with:
           environment-file: environment.yml
           init-shell: bash
-      - run: python -m test.unit.test_my_utils.py
+      - run: |
+        source activate swe4s
+        python -m test.unit.test_my_utils
   run_func_test:
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +25,9 @@ jobs:
         with:
           environment-file: environment.yml
           init-shell: bash
-      - run: bash test/func/test_print_fires.sh
+      - run: |
+        source activate swe4s
+        bash test/func/test_print_fires.sh
   run_linter:
     runs-on: ubuntu-latest
     steps:
