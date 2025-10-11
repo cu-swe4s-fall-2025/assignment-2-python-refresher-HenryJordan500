@@ -15,6 +15,7 @@ jobs:
           environment-file: environment.yml
           init-shell: bash
       - run: |
+          eval "$(micromamba shell hook --shell bash)"
           micromamba activate swe4s
           python -m test.unit.test_my_utils
   run_func_test:
@@ -26,6 +27,7 @@ jobs:
           environment-file: environment.yml
           init-shell: bash
       - run: |
+          eval "$(micromamba shell hook --shell bash)"
           mircomamba activate swe4s
           bash test/func/test_print_fires.sh
   run_linter:
