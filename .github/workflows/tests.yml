@@ -15,7 +15,7 @@ jobs:
           environment-file: environment.yml
           init-shell: bash
       - run: |
-          source activate swe4s
+          micromamba activate swe4s
           python -m test.unit.test_my_utils
   run_func_test:
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
           environment-file: environment.yml
           init-shell: bash
       - run: |
-          source activate swe4s
+          mircomamba activate swe4s
           bash test/func/test_print_fires.sh
   run_linter:
     runs-on: ubuntu-latest
