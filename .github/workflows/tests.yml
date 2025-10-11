@@ -28,7 +28,7 @@ jobs:
           init-shell: bash
       - run: |
           eval "$(micromamba shell hook --shell bash)"
-          mircomamba activate swe4s
+          micromamba activate swe4s
           bash test/func/test_print_fires.sh
   run_linter:
     runs-on: ubuntu-latest
