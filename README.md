@@ -11,3 +11,6 @@ print_fires.py prints the forest fires in the input country for each year in the
 
 # Testing
 Unit tests validate mean, median, and standard deviaition functions. Functional testing on shortetend data set of full program. 
+
+# Continuous Integration
+Implemented continous intergration with github actions. Will run a unit test, functional test, and a pycodestyle linter. Will run on push and pull request.
